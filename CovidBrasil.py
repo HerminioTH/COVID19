@@ -4,19 +4,19 @@ import matplotlib as plt
 import datetime as dt
 import matplotlib.dates as mdates
 
-def getDataFromState(data, estados, estado):
-    return data[estados[estado][0]:estados[estado][1],:]
+def getDataFromState(data, hash_state, state):
+    return data[hash_state[state][0]:hash_state[state][1],:]
 
 def createHashTable(data):
-    estados = {}
+    hash_state = {}
     regioes = {}
     nData = data.shape[0]
     for i in range(1,nData):
-        if data[i][1] in estados:
-            estados[data[i][1]][1] = i+1
+        if data[i][1] in hash_state:
+            hash_state[data[i][1]][1] = i+1
         else:
-            estados[data[i][1]] = [i, 0]
-    return estados
+            hash_state[data[i][1]] = [i, 0]
+    return hash_state
 
 def getData(fileName):
     with open(fileName, "r") as f:
@@ -102,8 +102,4 @@ def plotCountryData(data, hash_state, regions, ax1, ax2, ax3, ax4):
     ax3.legend(loc=2)
     ax4.legend(loc=2)
 
-if __name__ == '__main__':
-    data = getData("Data/COVID19_20200402.csv")
 
-    estados = createHashTable(data)
-    print(getDataFromState(data, estados, 'SP'))

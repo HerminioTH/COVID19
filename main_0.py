@@ -1,8 +1,8 @@
-from ReadCovidData import *
+from CovidBrasil import *
 import matplotlib.pyplot as plt
 
 
-data = getData("Data/COVID19_20200429.csv")
+data = getData("Data/COVID19_20200501.csv")
 # data = getData("Data/COVID19_20200408.csv")
 hash_state = createHashTable(data)
 
