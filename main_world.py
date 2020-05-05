@@ -10,7 +10,7 @@ co = CovidDataFromJson(fileName)
 
 country_codes = ['BRA','ITA','FRA','CHN','USA','DEU','ESP','KOR','JPN']
 country_codes = ['BRA','ITA','FRA','USA','ESP','ECU','SWE','DEU']
-# country_codes = ['BRA','KOR','JPN']
+# country_codes = ['BRA','','JPN']
 # country_codes = EUROPE
 
 nCodes = len(country_codes)
